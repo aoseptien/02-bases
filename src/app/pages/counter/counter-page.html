@@ -1,58 +1,100 @@
-<h1
-  [style.text-align]="'left'"
-  [style.color]="'#333'"
-  [style.font-size]="'48px'"
-  [style.font-weight]="'bold'"
-  [style.margin]="'30px 0'"
-  [style.text-shadow]="'2px 2px 4px rgba(0,0,0,0.1)'"
+<div
+  [style.display]="'flex'"
+  [style.gap]="'15px'"
+  [style.margin]="'15px 0'"
+  [style.max-width]="'400px'"
 >
-  Counter: {{ counter }}
-</h1>
+  <div
+    [style.background]="'linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%)'"
+    [style.padding]="'12px 20px'"
+    [style.border-radius]="'8px'"
+    [style.box-shadow]="'0 2px 8px rgba(0,0,0,0.06)'"
+    [style.flex]="'1'"
+    [style.text-align]="'center'"
+  >
+    <div
+      [style.color]="'#6366f1'"
+      [style.font-size]="'18px'"
+      [style.margin-bottom]="'5px'"
+      [style.font-weight]="'600'"
+    >
+      Counter
+    </div>
+    <div [style.color]="'#4338ca'" [style.font-size]="'36px'" [style.font-weight]="'bold'">
+      {{ counter }}
+    </div>
+  </div>
 
-<hr />
-<button
-  (click)="increaseBy(1)"
-  [style.background-color]="'#4CAF50'"
-  [style.color]="'white'"
-  [style.padding]="'12px 24px'"
-  [style.font-size]="'16px'"
-  [style.border]="'none'"
-  [style.border-radius]="'8px'"
-  [style.cursor]="'pointer'"
-  [style.transition]="'all 0.3s'"
-  [style.width]="'120px'"
->
-  +1
-</button>
-<br />
-<br />
-<button
-  (click)="increaseBy(-1)"
-  [style.background-color]="'#f44336'"
-  [style.color]="'white'"
-  [style.padding]="'12px 24px'"
-  [style.font-size]="'16px'"
-  [style.border]="'none'"
-  [style.border-radius]="'8px'"
-  [style.cursor]="'pointer'"
-  [style.transition]="'all 0.3s'"
-  [style.width]="'120px'"
->
-  -1
-</button>
-<br />
-<br />
-<button
-  (click)="resetCounter()"
-  [style.background-color]="'#0097c9ff'"
-  [style.color]="'white'"
-  [style.padding]="'12px 24px'"
-  [style.font-size]="'16px'"
-  [style.border]="'none'"
-  [style.border-radius]="'8px'"
-  [style.cursor]="'pointer'"
-  [style.transition]="'all 0.3s'"
-  [style.width]="'120px'"
->
-  Reset
-</button>
+  <div
+    [style.background]="'linear-gradient(135deg, #fce7f3 0%, #ffe4e6 100%)'"
+    [style.padding]="'12px 20px'"
+    [style.border-radius]="'8px'"
+    [style.box-shadow]="'0 2px 8px rgba(0,0,0,0.06)'"
+    [style.flex]="'1'"
+    [style.text-align]="'center'"
+  >
+    <div
+      [style.color]="'#ec4899'"
+      [style.font-size]="'18px'"
+      [style.margin-bottom]="'5px'"
+      [style.font-weight]="'600'"
+    >
+      Counter Signal
+    </div>
+    <div [style.color]="'#be185d'" [style.font-size]="'36px'" [style.font-weight]="'bold'">
+      {{ counterSignal() }}
+    </div>
+  </div>
+</div>
+
+<hr [style.border]="'none'" [style.border-top]="'2px solid #e0e0e0'" [style.margin]="'20px 0'" />
+<div [style.display]="'flex'" [style.gap]="'10px'">
+  <button
+    (click)="increaseBy(1)"
+    [style.background]="'linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%)'"
+    [style.color]="'#991b1b'"
+    [style.padding]="'12px 24px'"
+    [style.font-size]="'16px'"
+    [style.font-weight]="'600'"
+    [style.border]="'none'"
+    [style.border-radius]="'10px'"
+    [style.cursor]="'pointer'"
+    [style.transition]="'all 0.3s'"
+    [style.width]="'120px'"
+    [style.box-shadow]="'0 2px 8px rgba(0,0,0,0.1)'"
+  >
+    +1
+  </button>
+  <button
+    (click)="increaseBy(-1)"
+    [style.background]="'linear-gradient(135deg, #fde0c2 0%, #fcc9a0 100%)'"
+    [style.color]="'#9a3412'"
+    [style.padding]="'12px 24px'"
+    [style.font-size]="'16px'"
+    [style.font-weight]="'600'"
+    [style.border]="'none'"
+    [style.border-radius]="'10px'"
+    [style.cursor]="'pointer'"
+    [style.transition]="'all 0.3s'"
+    [style.width]="'120px'"
+    [style.box-shadow]="'0 2px 8px rgba(0,0,0,0.1)'"
+  >
+    -1
+  </button>
+  <button
+    (click)="resetCounter()"
+    [style.background]="'linear-gradient(135deg, #fef4e6 0%, #fdd8af 100%)'"
+    [style.color]="'#92400e'"
+    [style.padding]="'12px 24px'"
+    [style.font-size]="'16px'"
+    [style.font-weight]="'600'"
+    [style.border]="'none'"
+    [style.border-radius]="'10px'"
+    [style.cursor]="'pointer'"
+    [style.transition]="'all 0.3s'"
+    [style.width]="'120px'"
+    [style.box-shadow]="'0 2px 8px rgba(0,0,0,0.1)'"
+  >
+    Reset
+  </button>
+</div>

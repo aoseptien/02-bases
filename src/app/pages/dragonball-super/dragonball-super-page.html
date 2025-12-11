@@ -1,0 +1,10 @@
+<div [style.max-width]="'800px'" [style.margin]="'0 auto'" [style.padding]="'20px'">
+  <!-- Main Content Grid -->
+  <div [style.display]="'grid'" [style.grid-template-columns]="'1fr 1fr'" [style.gap]="'20px'">
+    <!-- Add Character Section -->
+    <dragonball-character-add [name]="name" [power]="power" (addCharacter)="addCharacter()" />
+
+    <!-- Characters List Section -->
+    <dragonball-character-list listName="👥 Personajes Fuertes" [characters]="characters()" />
+  </div>
+</div>

@@ -1,0 +1,99 @@
+<nav
+  [style.background]="'linear-gradient(135deg, #ffd7d1 0%, #ffb8ad 100%)'"
+  [style.padding]="'15px 30px'"
+  [style.box-shadow]="'0 2px 10px rgba(0,0,0,0.1)'"
+  [style.margin-bottom]="'20px'"
+>
+  <div
+    [style.max-width]="'1200px'"
+    [style.margin]="'0 auto'"
+    [style.display]="'flex'"
+    [style.justify-content]="'space-between'"
+    [style.align-items]="'center'"
+  >
+    <!-- Logo/Title -->
+    <div
+      [style.font-size]="'24px'"
+      [style.font-weight]="'bold'"
+      [style.color]="'#7c2d12'"
+      [style.text-shadow]="'1px 1px 2px rgba(0,0,0,0.05)'"
+    >
+      🎓 Angular Bases
+    </div>
+
+    <!-- Nav Links -->
+    <ul
+      [style.list-style]="'none'"
+      [style.display]="'flex'"
+      [style.gap]="'15px'"
+      [style.margin]="'0'"
+      [style.padding]="'0'"
+    >
+      <li>
+        <a
+          routerLink=""
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [style.text-decoration]="'none'"
+          [style.color]="'#7c2d12'"
+          [style.font-weight]="'600'"
+          [style.padding]="'8px 20px'"
+          [style.border-radius]="'8px'"
+          [style.background]="'rgba(255, 255, 255, 0.6)'"
+          [style.transition]="'all 0.3s'"
+          [style.display]="'inline-block'"
+        >
+          🔢 Counter
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="hero"
+          routerLinkActive="active"
+          [style.text-decoration]="'none'"
+          [style.color]="'#7c2d12'"
+          [style.font-weight]="'600'"
+          [style.padding]="'8px 20px'"
+          [style.border-radius]="'8px'"
+          [style.background]="'rgba(255, 255, 255, 0.6)'"
+          [style.transition]="'all 0.3s'"
+          [style.display]="'inline-block'"
+        >
+          🦸 Hero
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="dragonball"
+          routerLinkActive="active"
+          [style.text-decoration]="'none'"
+          [style.color]="'#7c2d12'"
+          [style.font-weight]="'600'"
+          [style.padding]="'8px 20px'"
+          [style.border-radius]="'8px'"
+          [style.background]="'rgba(255, 255, 255, 0.6)'"
+          [style.transition]="'all 0.3s'"
+          [style.display]="'inline-block'"
+        >
+          🐉 Dragonball
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="dragonball-super"
+          routerLinkActive="active"
+          [style.text-decoration]="'none'"
+          [style.color]="'#7c2d12'"
+          [style.font-weight]="'600'"
+          [style.padding]="'8px 20px'"
+          [style.border-radius]="'8px'"
+          [style.background]="'rgba(255, 255, 255, 0.6)'"
+          [style.transition]="'all 0.3s'"
+          [style.display]="'inline-block'"
+        >
+          🐉 Dragonball Super
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
