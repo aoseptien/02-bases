@@ -1,7 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CharacterList } from '../../components/dragonball/character-list/character-list';
-import { Character } from '../../interfaces/character.interface';
 import { CharacterAdd } from '../../components/dragonball/character-add/character-add';
+import { DragonballService } from '../../services/dragonball.service';
 
 @Component({
   selector: 'app-dragonball-super-page',
@@ -9,38 +9,25 @@ import { CharacterAdd } from '../../components/dragonball/character-add/characte
   imports: [CharacterList, CharacterAdd],
 })
 export class DragonballSuperPage {
+  private dragonballService = inject(DragonballService);
+
+  // Solo inputs del usuario
   name = signal('');
   power = signal<number | null>(null);
 
-  characters = signal<Character[]>([
-    { id: 1, name: 'Goku', power: 9001 },
-    { id: 2, name: 'Vegeta', power: 8000 },
-  ]);
+  // Estado viene del servicio
+  characters = this.dragonballService.characters;
 
   addCharacter() {
-    const nameValue = this.name().trim();
     const powerValue = this.power();
+    if (!powerValue) return;
 
-    // Validaciones simples
-    if (!nameValue) {
-      alert('⚠️ El nombre del personaje es requerido');
-      return;
+    const success = this.dragonballService.addCharacter(this.name(), powerValue);
+
+    // Solo limpia si se agregó exitosamente
+    if (success) {
+      this.name.set('');
+      this.power.set(null);
     }
-
-    if (!powerValue || powerValue <= 500) {
-      alert('⚠️ El nivel de poder debe ser mayor a 500');
-      return;
-    }
-
-    const newCharacter: Character = {
-      id: this.characters().length + 1,
-      name: nameValue,
-      power: powerValue,
-    };
-
-    this.characters.update((list) => [...list, newCharacter]);
-
-    this.name.set('');
-    this.power.set(null);
   }
 }
